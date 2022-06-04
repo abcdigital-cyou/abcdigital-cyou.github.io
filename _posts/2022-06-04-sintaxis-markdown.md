@@ -16,11 +16,13 @@ Por ejemplo, para denotar un encabezado, agregue un símbolo almohadilla antes (
 
 ## Sintaxis Markdown
 ### Saltos de línea y párrafos
-`Si pones dos espacios entre el texto  genera una nueva línea`
+`Si pones dos espacios entre el texto  genera una nueva línea`  
 Si pones dos espacios entre el texto  genera una nueva línea
+
 `Para generar un nuevo párrafo, simplemente dale dos veces a INTRO 
 
 (generando una línea vacía entre dos líneas de texto)`
+
 Para generar un nuevo párrafo, simplemente dale dos veces a INTRO 
 
 (generando una línea vacía entre dos líneas de texto)
