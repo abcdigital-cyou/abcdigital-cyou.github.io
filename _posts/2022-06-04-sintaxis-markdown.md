@@ -3,12 +3,12 @@ layout: post
 title: Sintaxis Markdown
 description: Markdown (.md) es un lenguaje de etiquetas que facilita la aplicación de formato a un texto.
 date: 2020-12-30 11:12:30 -0800
-tags: Markdown, Publicar en Github
+tags: Markdown
 ---
 # Markdown
 
 ## ¿Qué es markdown?
-Markdown es un lenguaje de marcado ligero que puede usar para agregar elementos de formato a documentos de texto sin formato. Creado por (John Gruber)[https://daringfireball.net/projects/markdown/] en 2004, Markdown es ahora uno de los lenguajes de etiquetas más populares del mundo.
+Markdown es un lenguaje de marcado ligero que puede usar para agregar elementos de formato a documentos de texto sin formato. Creado por [John Gruber](https://daringfireball.net/projects/markdown/) en 2004, Markdown es ahora uno de los lenguajes de etiquetas más populares del mundo.
 
 Usar Markdown es diferente a usar un editor WYSIWYG (What You See Is What You Get, o Lo que ves es lo que obtienes). En una aplicación como Microsoft Word, haces clic en botones para dar formato a palabras y frases, y los cambios son visibles inmediatamente. Markdown no es así. Cuando creas un archivo con formato de Markdown, agregas la sintaxis de Markdown al texto para indicar qué palabras y frases deben verse diferentes.
 
