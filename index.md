@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+ABC DIgital pretende convertirse en un espacio de alfabetización digital colectivo.
 
-Maybe say a some things about yourself.
+El dominio caduca en 9 años, y el código se hospeda en github, lo que permite una edición colaborativa.
 
-Or maybe what you plan to blog about.
+Bienvenid@, y si te parece bien la idea, ¡no dudes en colaborar!.
