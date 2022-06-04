@@ -1,7 +1,8 @@
 title: "ABC Digital"
-author: "ABC Digital Staff"
-description: "ABC Digital, alfabetización digital colectiva." # This will show up in places like twitter, linkedin, etc, if you share your sites url as a post.
-
+author: "Voluntariado de ABC Digital"
+description: >
+  ABC Digital, alfabetización digital colectiva.
+  
 # Email / Social media user names used by the minima theme:
 # All of these are optional and can be removed or commented out
 # email: "example@mail.com"
@@ -14,6 +15,8 @@ github_username: "abcdigital-cyou"
 #pinterest_username: username
 #youtube_username: username
 #googleplus_username: +username
+
+show_excerpts: true
 
 #########################################################################################
 ######### Nothing below needs to be changed (unless you know what you're doing) #########
@@ -39,4 +42,4 @@ defaults:
       path: ""
       type: post
     values:
-      tags: General, Internet, Sistemas, Programación, Algoritmos
+      tags: General
