@@ -1,4 +1,4 @@
-ABC DIgital pretende convertirse en un espacio de alfabetización digital colectivo.
+ABC Digital pretende convertirse en un espacio de alfabetización digital colectivo.
 
 El dominio caduca en 9 años, y el código se hospeda en github, lo que permite una edición colaborativa.
 
