@@ -1,3 +1,10 @@
+---
+layout: post
+title: Inicio del proyecto ABC Digital
+description: Propuesta de proyecto colectivo de alfabetización digital en español
+date: 2022-06-04 17:40:00
+tags: ABC Digital
+---
 ## Inicio del proyecto ABC Digital
 
 Hace algún tiempo que me rondaba la idea de hacer un espacio de aprendizaje tecnológico que sirva a las personas para comprender la tecnología que nos rodea diariamente.
