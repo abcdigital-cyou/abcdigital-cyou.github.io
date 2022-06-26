@@ -1,0 +1,246 @@
+= Tipos de datos
+Juan Alberto González, 24/06/2022
+:includedir: includes
+:toc: right
+:toc-title: Contenidos
+
+
+
+== Tipos de datos primitivos 
+Como vimos en la unidad anterior, la memoria es lineal y finita (tiene límites). En ella se almacenan datos en forma de secuencias de números, por medio de variables.
+
+[cols="h,8*"]
+[width="80%"]
+[.center]
+|=====================================================
+| VARIABLE  | medida  |   |   | nombre  |   |   |   | 
+| POSICIÓN  | 0       | 1 | 2 | 3       | 4 | 5 | 6 | 
+| CONTENIDO | fanega  |   |   | Aytami  |   |   |   | 
+|=====================================================
+
+
+Este esquema no es del todo cierto, ya que las variables, dependiendo del tipo que sean, ocupan la memoria de distintas maneras. Como ya se comentó, en los lenguajes tipados, aquellos en los que definimos previamente el tipo de dato que almacenará la variable, hay unos tipos de datos denominados *tipos de datos primitivos*
+
+Antes de continuar, debemos tener claro que la memoria de un ordenador sólo permite almacenar información en código binario, es decir, en forma de ceros y unos. El código binario, es un código en base 2
+
+=== Tipo de datos carácter (char)
+El tipo de datos carácter representa un único carácter (letra, número o símbolo) en formato ASCII ( https://es.wikipedia.org/wiki/ASCII[American Standard Code For Information Exchange] ) creado en 1963, en el que cada carácter tiene una longitud de 7 bits, o cualquiera de los códigos más contemporáneos que incluyen el ASCII en su codificación.
+
+include::{includedir}/ascii_table.adoc[]
+
+
+Cuando especificamos una variable de tipo char,
+[source]
+----
+var char = 'a'
+----
+en la memoria, nuestra variable char almacena el código que equivale al carácter en cuestión
+
+[options="header"]
+[width="80%"]
+[.center]
+|=============================================
+| VARIABLE  | char  |   |   |   |   |   |   |  
+| POSICIÓN  | 0     | 1 | 2 | 3 | 4 | 5 | 6 | 7
+| CONTENIDO | a     |   |   |   |   |   |   |  
+|=============================================
+
+que realmente se rellena como
+
+[options="header"]
+[width="80%"]
+[.center]
+|=============================================
+| VARIABLE  | char  |   |   |   |   |   |   | 
+| POSICIÓN  | 0     | 1 | 2 | 3 | 4 | 5 | 6 | 7
+| CONTENIDO | 01100001|   |   |   |   |   |   | 
+|=============================================
+
+[IMPORTANT]
+====
+Las variables de tipo carácter se deben definir entre comillas simples " ' "
+====
+
+[IMPORTANT]
+====
+Si bien los carácteres ASCII sólo ocupan 7 bits, la unidad de medida, que es un byte, son 8 bits. Por eso 'a' se representa por 01100001
+====
+
+=== Tipo de datos cadena de carácteres (string)
+Cuando especificamos una variable de tipo string lo hacemos *entre comillas dobles*
+[source]
+----
+var string = "viste?"
+----
+esta se almacena en la memoria en espacios consecutivos
+
+[options="header"]
+[width="80%"]
+[.center]
+|===
+|VARIABLE 6+^|string||
+|POSICION
+|0
+|1
+|2
+|3
+|4
+|5
+|6
+|7
+|CONTENIDO
+|v
+|i
+|s
+|t
+|e
+|? 
+| 
+| 
+|===
+
+y como realmente quedaría ocupada la memoria sería:
+
+[NOTA]
+====
+Fíjate que *la cadena acaba con el octeto 00000000*, que equivale según la tabla ASCII a *NUL* esto es porque la longitud del *string* en principio es indefinida, hasta que el procesador del lenguaje en que trabajemos encuentre la posición con el carácter *NUL*
+====
+
+[options="header"]
+[width="80%"]
+[.center]
+|===
+|VARIABLE 7+^|string|
+h|POSICION
+^|0
+^|1
+^|2
+^|3
+^|4
+^|5
+^|6
+^|7
+h|CONTENIDO
+h|01110110
+h|01101001
+h|01110011
+h|01110100
+h|01100101
+h|00111111 
+h|00000000 
+| 
+|===
+
+=== Tipo de datos número entero (integer)
+
+[NOTA]
+====
+[source]
+----
+var num = '1'
+var num = 1
+----
+Estas dos *asignaciones* no son equivalentes, mientras que una corresponde a un carácter, la otra refiere a un número
+====
+
+Los números se almacenan en variables de 32 o 64bits, dependiendo del lenguaje de programación
+
+
+=== Tipo de datos número coma flotante (float)
+
+=== Tipo de datos booleano (boolean)
+Sólo tienen dos valores (0 o 1, Verdadero o Falso)
+
+== Tipos de datos complejos
+Juan Alberto González, 24/06/2022
+:includedir: includes
+:toc:
+:toc-title: Contenidos
+:source-highlighter: pygments
+
+=== Conjunto (Array)
+Un Array o Conjunto esta formado por elementos de datos primitivos, u otros arrays o conjuntos. Su sintaxis es la siguiente
+[source]
+----
+array = []
+var num = 1
+----
+
+=== Tupla (Tuple)
+Array invariable o mapa asociactivo. Dependiendo del lenguaje puede funcionar como un mapa asociativo o par clave, habitualmente sus valores son invariables, esto quiere decir que una vez que se define no se pueden cambiar a posteriori.
+
+[source]
+----
+tupla = (a=>1, b=>2, c=>3)
+----
+
+otros lenguajes entienden la tupla como una lista de elementos invariables
+
+[source]
+----
+tupla = (a, b, c)
+----
+
+=== Mapa asociativo o Array asociativo o Diccionario
+Los Arrays asociativos son Arrays compuestos que tienen una *clave* asociada a un *valor*.
+
+En PHP por ejemplo:
+
+[source,php]
+----
+ArrayAsociativo = array(
+    "Tenerife" => "Santa Cruz de Tenerife",
+    "Gran Canaria"=>"Las Palmas de Gran Canaria",
+)
+----
+O en JavaScript:
+[source,javascript]
+----
+ArrayAsociativo = {
+    "Tenerife":"Santa Cruz de Tenerife",
+    "Gran Canaria":"Las Palmas de Gran Canaria"
+}
+----
+
+=== Objetos
+Los objetos son datos complejos usados para representar propiedades
+[source]
+----
+Objeto Caja:
+    Propiedades
+    - Color: Blanco
+    - Forma: Rectángulo
+----
+En Java:
+[source,java]
+----
+class Caja{
+    String Color="blanco";
+    String Forma="rectangular";
+    int Largo=20;
+}
+----
+
+Los objetos pueden tener tambión métodos, como por ejemplo:
+[source]
+----
+Objeto PapaPotato:
+    Propiedades
+    - Color: Marrón
+    - Forma: Papa
+    - Accesorios disponibles: Sombrero, zapato, labios, ojos, cejas
+    Métodos
+    - Poner accesorio
+    - Quitar accesorio
+----
+En Java:
+[source,java]
+----
+class Juguete{
+    String Color="marron";
+    String Forma="papa";
+    Array Accesorios=["sombrero", "zapatos", "labios", "ojos", "cejas"];
+    Poneraccesorio(){};
+    Quitaraccesorio(){};
+}
+----

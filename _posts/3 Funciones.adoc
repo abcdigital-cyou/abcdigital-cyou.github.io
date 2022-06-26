@@ -1,0 +1,145 @@
+= Funciones
+Juan Alberto González, 24/06/2022
+:includedir: includes
+:toc: right
+:toc-title: Contenidos
+
+== Definición
+Una función es un contenedor de órdenes que puedes llamar múltiples veces para repetir las órdenes en su interior. Cada lenguaje tiene una sintaxis diferente para definir las funciones.
+
+En java:
+[source,java]
+----
+public class Main {
+public static int suma(int a, int b) {
+    return a + b 
+    }
+}
+----
+
+ public static => función pública de java. 
+ int => tipo de datos que devuelve (entero).
+ suma => nombre de la función
+ (int a, int b) => argumentos de la función (dos números enteros)
+ return => dato que devolvemos
+
+La función se invoca mediante:
+[source,java]
+----
+suma(10,30)
+----
+y si queremos imprimir el resultado:
+[source,java]
+----
+System.out.println(suma(10,30));
+----
+ System.out.println imprime una línea seguida de un return.
+
+La función puede o no devolver un resultado, en caso de que no deseemos un resultado retornado por la función, el tipo de datos a especificar es void. 
+
+[source,java]
+----
+public class Main {
+public static void suma(int a, int b) {
+    System.out.println(a+b);
+    }
+}
+----
+
+== Ámbito (Scope)
+Las variables de una función tienen un *ámbito* definido, por ejemplo en la función anterior, las variables *a* y *b* tienen el alcance de la función, es decir, una vez invocada la función, las variables y su contenido se destruyen
+
+La función suma en el lenguaje https://play.golang.org[*go*] sería la siguiente
+[source,go]
+----
+package main
+import "fmt"
+func main() {
+    resultado:= suma(10, 30)
+    fmt.Println(resultado)
+}
+func suma(a int, b int) int{
+    return a + b
+}
+----
+
+[NOTA]
+====
+Las funciones permiten la *modularidad* en la programación. Cuando en Windows vemos muchos archivos *.dll*, o en Macintosh o en Linux los archivos *.so*, estos archivos son librerías reutilizables, formadas por funciones que pueden ser importadas y reutilizadas.
+====
+
+[NOTA]
+====
+Las funciones deben ser cortas y efectivas. cuanto más cortas y eficientes, más sencillo será para depurarlas.
+====
+
+== Funciones Avanzadas
+Para pasarle datos a una función lo podemos hacer, directamente por valor, de esta manera
+
+[source,java]
+----
+suma(10,30);
+----
+
+o de esta otra
+[source,java]
+----
+int param1 = 10; //4 bytes
+int param2 = 30; //4 bytes
+var valor = suma(param1,param2);
+System.out.println(valor);
+----
+por otro lado, podemos, por referencia pasar un valor de la memoria. En java es inherente al sistema, y lo podemos hacer mediante la creación de una instancia de un objeto
+
+[source, java]
+----
+public class Main {
+    public static void main(String[] args) {
+        Potato miPotato = new Potato();
+        miPotato.QuitarBrazo();
+        miPotato.QuitarBrazo();
+        miPotato.QuitarBrazo();
+        System.out.println(miPotato.brazos);
+    }
+}
+
+class Potato {
+    public int brazos = 0;
+    public void QuitarBrazo() {
+        this.brazos--;
+    }
+
+}
+    
+----
+ pero por ejemplo en https://play.golang.org[*go*] sería así:
+
+[source,go]
+----
+package main
+import "fmt"
+funv main() {
+    var resultado int
+    suma(10, 30, &resultado) //el símbolo & antes de la variable resultado implica pasar la dirección de la memoria
+    fmt.Println(resultado)
+}
+func suma(a int, b int, c *int){
+    *c = a + b //el asterisco indica puntero hacia la variable
+}
+----
+
+[NOTA]
+====
+Un puntero es un apuntador a una dirección de memoria
+====
+
+== Funciones Recursivas
+Una función recursiva es una función que devuelve un valor y se invoca a si misma.
+
+== Callback
+Un callback es una función asignada a una variable
+[source,js]
+----
+mivariable = function;
+mivariable();
+----
